@@ -1,0 +1,12 @@
+<h3>Add New Cake</h3>
+<form (submit)="createCakeThroughService()">
+  <label for="newCake.baker" class="d-block">Baker:</label>
+  <input type="text" name="newCake.baker" [(ngModel)]="newCake.baker" class="text_input">
+  <label for="newCake.name" class="d-block">Cake Name:</label>
+  <input type="text" name="newCake.name" [(ngModel)]="newCake.name" class="text_input">
+  <label for="newCake.description" class="d-block">Cake Description:</label>
+  <input type="text" name="newCake.description" [(ngModel)]="newCake.description" class="text_input">
+  <label for="newCake.img_url" class="d-block">Cake Image URL:</label>
+  <input type="text" name="newCake.img_url" [(ngModel)]="newCake.img_url" class="text_input">
+  <input type="submit" value="Add Cake" class="btn btn-success mt-3">
+</form>

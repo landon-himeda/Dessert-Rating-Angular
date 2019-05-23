@@ -1,0 +1,7 @@
+<div class="row">
+  <div *ngFor="let cake of allCakes" (click)="cakeClicked(cake)" class="m-3 text-center">
+    <h4>{{ cake.name }} by {{ cake.baker }}</h4>
+    <img src="{{ cake.img_url }}" alt="{{ cake.baker }}'s {{ cake.name }}" class="image border border-secondary rounded">
+    <p>Click to view/add comment</p>
+  </div>
+</div>

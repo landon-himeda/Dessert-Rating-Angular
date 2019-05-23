@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col">
+    <h2 class="text-center">{{ cakeToView.name }} by {{ cakeToView.baker }}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <img src="{{ cakeToView.img_url }}" alt="{{ cakeToView.baker }}'s {{ cakeToView.name }}" class="large_image border border-secondary rounded">
+  </div>
+  <div class="col">
+    <div class="row">
+      <button class="btn btn-danger" (click)="deleteCakeThroughService(cakeToView)">Delete Cake</button>
+    </div>
+    <div class="row">
+        <h3>Add New Rating</h3>
+    </div>
+    <form (submit)="createRatingThroughService(cakeToView)">
+      <div class="row">
+        <label for="newRating.comment" class="d-block">Comment:</label>
+      </div>
+      <div class="row">
+        <textarea name="newRating.comment" [(ngModel)]="newRating.comment" class="text_input" cols="35" rows="2"></textarea>
+      </div>
+      <div class="row mt-3">
+        <label for="newRating.score" class="my-2 mr-4">Rating:</label>
+        <select name="newRating.score" [(ngModel)]="newRating.score" class="mr-4">
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Stars</option>
+        </select>
+        <input type="submit" value="Add Rating" class="btn btn-success">
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <p>{{ cakeToView.description }}</p>
+    <div *ngFor="let rating of cakeToView.ratings">
+      <p>Comment: {{ rating.comment }}</p>
+      <p>{{ rating.score }} Stars</p>
+    </div>
+  </div>
+</div>

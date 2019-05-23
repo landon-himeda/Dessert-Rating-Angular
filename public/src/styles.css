@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.background {
+    background-image: url("./assets/BakingBackgroundCropped.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* min-height: 1000px; */
+}
